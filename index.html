@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepe - Complete Learning Management System</title>
+    <meta name="description" content="Complete preparation platform for SSC, Railway, Banking, Defence, Medical, Engineering and all competitive exams">
+    <meta name="keywords" content="SSC, Railway, Banking, Defence, NEET, JEE, competitive exams, online preparation">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data: blob:;">
+</head>
+<body>
+    <!-- Security Watermark -->
+    <div id="watermark" class="watermark hidden">
+        <div class="watermark-text">PREPE LMS - LICENSED CONTENT</div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="loading-icon">🎓</span>
+                <span class="loading-text">Prepe</span>
+            </div>
+            <div class="loading-spinner"></div>
+            <p class="loading-message">Loading your learning platform...</p>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <button class="logo-btn" id="home-btn">
+                    <h1>🎓 Prepe LMS</h1>
+                </button>
+                <span class="version-badge">v2.0</span>
+            </div>
+            <div class="nav-controls">
+                <div class="search-container">
+                    <input type="text" id="global-search" placeholder="Search courses, subjects, chapters..." class="search-input">
+                    <button class="search-btn" id="search-btn">🔍</button>
+                    <div id="search-results" class="search-results hidden"></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">🌙</button>
+                <button id="user-menu-btn" class="user-menu-btn">👤</button>
+            </div>
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-container" id="breadcrumb-container" style="display: none;">
+            <div class="nav-container">
+                <nav class="breadcrumb" id="breadcrumb"></nav>
+                <div class="nav-actions">
+                    <button class="nav-btn" id="back-btn" title="Go Back">←</button>
+                    <button class="nav-btn" id="forward-btn" title="Go Forward">→</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- User Menu Dropdown -->
+    <div id="user-dropdown" class="user-dropdown hidden">
+        <div class="user-info">
+            <div class="user-avatar">👤</div>
+            <div class="user-details">
+                <div class="user-name">Guest User</div>
+                <div class="user-email">Please login to access premium content</div>
+            </div>
+        </div>
+        <div class="user-menu-items">
+            <button class="menu-item" id="login-btn">🔐 Login</button>
+            <button class="menu-item" id="signup-btn">📝 Sign Up</button>
+            <button class="menu-item" id="profile-btn">👤 Profile</button>
+            <button class="menu-item" id="settings-btn">⚙️ Settings</button>
+            <button class="menu-item" id="logout-btn">🚪 Logout</button>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="main-content" id="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Complete Competitive Exam Preparation</h1>
+                        <p class="hero-subtitle">Master SSC, Railway, Banking, Defence, Medical, Engineering & Board Exams</p>
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Exams</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Subjects</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3000+</span>
+                                <span class="stat-label">Chapters</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15,000+</span>
+                                <span class="stat-label">Questions</span>
+                            </div>
+                        </div>
+                        <div class="hero-actions">
+                            <button class="btn btn--primary" id="explore-courses-btn">🚀 Explore Courses</button>
+                            <button class="btn btn--outline" id="demo-btn">👁️ View Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exam Categories -->
+            <section class="categories-section">
+                <div class="container">
+                    <h2 class="section-title">Choose Your Exam Category</h2>
+                    <div class="categories-grid" id="categories-grid">
+                        <!-- Categories will be populated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Category Page -->
+        <div id="category-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1 id="category-title">Category Exams</h1>
+                    <p id="category-description">Choose your specific exam</p>
+                </div>
+                <div class="exams-grid" id="exams-grid">
+                    <!-- Exams will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Exam Page -->
+        <div id="exam-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1 id="exam-title">Exam Subjects</h1>
+                    <p id="exam-description">Choose your subject to study</p>
+                </div>
+                <div class="subjects-grid" id="subjects-grid">
+                    <!-- Subjects will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Subject Page -->
+        <div id="subject-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1 id="subject-title">Subject Chapters</h1>
+                    <p id="subject-description">Choose your chapter to study</p>
+                </div>
+                <div class="chapters-grid" id="chapters-grid">
+                    <!-- Chapters will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Chapter Page -->
+        <div id="chapter-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1 id="chapter-title">Chapter Content</h1>
+                    <p id="chapter-description">Choose your content type</p>
+                </div>
+                <div class="content-types-grid" id="content-types-grid">
+                    <!-- Content types will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Viewer -->
+        <div id="content-page" class="page">
+            <div class="content-viewer">
+                <div class="content-header">
+                    <h1 id="content-title">Content Title</h1>
+                    <div class="content-actions">
+                        <button class="btn btn--outline" id="fullscreen-btn">🔲 Fullscreen</button>
+                        <button class="btn btn--outline" id="download-btn">💾 Download</button>
+                    </div>
+                </div>
+                <div class="content-frame">
+                    <iframe id="content-iframe" src="" frameborder="0"></iframe>
+                    <div class="content-placeholder" id="content-placeholder">
+                        <h3>📚 Content Coming Soon</h3>
+                        <p>This content will be available after you add it to the respective folder.</p>
+                        <div class="placeholder-instructions">
+                            <h4>📁 How to add content:</h4>
+                            <ol>
+                                <li>Navigate to the content folder in your project</li>
+                                <li>Find the specific chapter folder</li>
+                                <li>Edit the HTML files with your content</li>
+                                <li>Refresh to see your content</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>🔐 Login to Prepe</h3>
+                <button class="modal-close" id="login-close">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label>📧 Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🔒 Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember-me">
+                            Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Login</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📝 Sign Up for Prepe</h3>
+                <button class="modal-close" id="signup-close">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="signup-form" class="auth-form">
+                    <div class="form-group">
+                        <label>👤 Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>📧 Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🔒 Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>🔒 Confirm Password</label>
+                        <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">Sign Up</button>
+                </form>
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="#" id="switch-to-login">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div id="purchase-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💳 Purchase Course</h3>
+                <button class="modal-close" id="purchase-close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="purchase-details" id="purchase-details">
+                    <!-- Purchase details will be populated by JavaScript -->
+                </div>
+                <div class="payment-methods">
+                    <h4>Choose Payment Method</h4>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="upi">
+                            <span class="payment-icon">💳</span>
+                            <span>UPI Payment</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <span class="payment-icon">💳</span>
+                            <span>Credit/Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="netbanking">
+                            <span class="payment-icon">🏦</span>
+                            <span>Net Banking</span>
+                        </label>
+                    </div>
+                </div>
+                <button class="btn btn--primary btn--full" id="proceed-payment">💰 Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="config/firebase-config.js"></script>
+    <script src="config/cashfree-config.js"></script>
+    <script src="config/course-prices.js"></script>
+    <script src="config/app-settings.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
