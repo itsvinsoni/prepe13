@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Spotting - Practice Quiz</title>
+    <style>
+        body { margin: 0; font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.2); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 30px; text-align: center; }
+        .content { padding: 40px; }
+        .question { background: #f8fafc; padding: 25px; border-radius: 15px; margin-bottom: 20px; }
+        .option { background: white; border: 2px solid #e5e7eb; padding: 15px; margin: 10px 0; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; }
+        .option:hover { border-color: #3b82f6; background: #eff6ff; }
+        .btn { background: #3b82f6; color: white; padding: 12px 30px; border: none; border-radius: 25px; cursor: pointer; margin: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❓ Error Spotting</h1>
+            <p>Practice Quiz - BANKING IBPS-CLERK</p>
+        </div>
+        <div class="content">
+            <div class="question">
+                <h3>Sample Question about Error Spotting</h3>
+                <div class="option">A) Option 1</div>
+                <div class="option">B) Option 2 (Correct)</div>
+                <div class="option">C) Option 3</div>
+                <div class="option">D) Option 4</div>
+            </div>
+            <button class="btn">Submit Answer</button>
+            <p><strong>Instructions:</strong> Replace this with actual quiz questions for Error Spotting</p>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.option').forEach(opt => opt.style.background = 'white');
+                this.style.background = '#dbeafe';
+            });
+        });
+    </script>
+</body>
+</html>
